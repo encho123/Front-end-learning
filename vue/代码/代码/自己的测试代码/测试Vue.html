@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>初识Vue</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../vue_basic/js/vue.min.js"></script>
+  </head>
+  <body>
+    <!-- 准备好一个容器 -->
+    <div id="demo">
+      <h1>Hello，{{name.toUpperCase()}}，{{address}}</h1>
+      <h1>我的心情是{{mood}}</h1>
+      <button @click="changemood">点我哦</button>
+    </div>
+
+    <script type="text/javascript">
+      Vue.config.productionTip = false; //阻止 vue 在启动时生成生产提示。
+
+      //创建Vue实例
+      const vm = new Vue({
+        el: "#demo", //el用于指定当前Vue实例为哪个容器服务，值通常为css选择器字符串。
+        data: {
+          name: "中国人",
+          address: "宜春",
+          mood: "开心",
+        },
+        methods: {
+          changemood() {
+            this.mood = "不开心";
+          },
+        },
+        watch: {
+          mood: function (newValue, oldValue) {
+            console.log(newValue, oldValue, "我改变了");
+          },
+        },
+        computed,
+      });
+      console.log(vm);
+    </script>
+  </body>
+</html>
