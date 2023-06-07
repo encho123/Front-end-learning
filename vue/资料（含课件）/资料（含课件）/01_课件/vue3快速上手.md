@@ -197,6 +197,7 @@ npm run dev
 -  从使用角度对比：
    -  ref定义的数据：操作数据<strong style="color:#DD5145">需要</strong>```.value```，读取数据时模板中直接读取<strong style="color:#DD5145">不需要</strong>```.value```。
    -  reactive定义的数据：操作数据与读取数据：<strong style="color:#DD5145">均不需要</strong>```.value```。
+-  数据一般都是数组和对象的形式存在，这样就可以都使用reactive（）。
 
 ## 6.setup的两个注意点
 
@@ -283,7 +284,7 @@ npm run dev
   //特殊情况
   watch(()=>person.job,(newValue,oldValue)=>{
       console.log('person的job变化了',newValue,oldValue)
-  },{deep:true}) //此处由于监视的是reactive素定义的对象中的某个属性，所以deep配置有效
+  },{deep:true}) //此处由于监视的是reactive所定义的对象中的某个属性，所以deep配置有效。 如果监视的是reactive对象，可以直接深度监视，所以deep参数无效。
   ```
 
 ### 3.watchEffect函数
@@ -580,7 +581,7 @@ npm run dev
 
     ```js
     import {defineAsyncComponent} from 'vue'
-    const Child = defineAsyncComponent(()=>import('./components/Child.vue'))
+    const Child = defineAsyncComponent(()=>import('./components/Child.vue')) //异步引入
     ```
 
   - 使用```Suspense```包裹组件，并配置好```default``` 与 ```fallback```
