@@ -1,24 +1,28 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  <h1>My first website</h1>
-  <HelloWorld msg="Vite + Vue" />
+  <router-view />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
+<script setup lang="ts">
+import { onMounted } from "vue";
+import request from "./utils/request";
+//挂载完毕发一个请求试试
+onMounted(() => {
+  request({
+    url: "/user/login",
+    method: "post",
+    data: {
+      username: "admin",
+      password: "11111",
+    },
+  }).then(
+    (res) => {
+      console.log(res);
+    },
+    (err) => {
+      console.log(err);
+    }
+  );
+});
+</script>
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style lang="scss" scoped></style>
