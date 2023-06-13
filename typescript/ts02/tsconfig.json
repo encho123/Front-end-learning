@@ -29,21 +29,18 @@
   "compilerOptions": {
     "target": "ESNext",
     // 目标 target 指定ts被便编译为js的版本
-
     "module": "ES6",
     // 模块化 指定要使用的模块化的规范
-
     /*
     module 可选值
     'none',
     'commonjs', 'amd', 'system', 'umd', 'es6', 'es2015', 'es2020', 'esnext'.
 */
-
     //    lib 库 要使用的库
     /*
     可选值：
 
-     'es5', 'es
+    'es5', 'es
 6', 'es2015', 'es7', 'es2016', 'es2017', 'es2018', 'es2019', 'es2020', 'esnext', 'd
 om', 'dom.iterable', 'webworker', 'webworker.importscripts', 'webworker.iterable',
 'scripthost', 'es2015.core', 'es2015.collection', 'es2015.generator', 'es2015.itera

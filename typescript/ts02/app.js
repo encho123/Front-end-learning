@@ -1,8 +1,7 @@
 // import {age} from './ex'
-
 console.log("啊哈哈");
-let a1: number;
-let b2: string;
+var a1;
+var b2;
 // console.log(age);
-let age = 111;
-let name1 = "张三";
+var age = 111;
+var name1 = "张三";

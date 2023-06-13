@@ -50,21 +50,24 @@ console.log(f.gender === Gender.Male);
 
 // 两个类型可以使用 | 来连接  也可以使用 & 来连接（& 表示同时满足）
 let g: { name: string } & { age: number };// 表示g需要同时满足两个对象
+// g = { name: 'dog', age: 13 };
 g = { name: '哈哈', age: 22 };
 
-// 类型的别名
+// 类型的别名 type的作用，就是给类型起一个名字
 let k: 1 | 2 | 3 | 4 | 5;
+// k=0;  // 0不在范围内
 type asa = 1 | 2 | 3 | 4 | 5;
 let l: asa;
 type myType = string;// 给string起一个别名，那么string和myType现在就等价了
 let s: myType;
 s = '111';
 
-
 let z: number[]; // 数组z，元素都是数字
 // z.push("1");
-// z.push(1);
+z = [1, 2, 3];
+z.push(1);
 let x: Array<string[]>;// 数组x，元素为字符串数组
+x = [['1'], ['2']];
 // x.push(['1']);
 
 // 元组 tuple 元组就是固定长度的数组
