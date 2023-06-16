@@ -59,14 +59,15 @@
     })
   })()
   ```
-        
+
 5. 页面使用模块:
   <script data-main="js/main" src="js/libs/require.js"></script>
-    
+
 ------------------------------------------------------------------------
 
 6. 使用第三方基于require.js的框架(jquery)
   * 将jquery的库文件导入到项目: 
+    
     * js/libs/jquery-1.10.1.js
   * 在main.js中配置jquery路径
     ```

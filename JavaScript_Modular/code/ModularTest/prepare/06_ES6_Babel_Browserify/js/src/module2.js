@@ -8,4 +8,4 @@ function fun2() {
   console.log('module2 fun2() ' + data);
 }
 
-export {fun1, fun2}
+export { fun1, fun2, samename }

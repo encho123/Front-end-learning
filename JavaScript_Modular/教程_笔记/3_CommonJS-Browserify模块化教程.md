@@ -17,7 +17,7 @@
   ```
 2. 下载browserify
   * 全局: npm install browserify -g
-  * 局部: npm install browserify --save-dev
+  * 局部: npm install browserify --save-dev  // 开发环境包，主要是作为中间的转换工具。最终运行时候不需要。
 3. 定义模块代码
   * module1.js
     ```
@@ -61,6 +61,7 @@
     console.log(uniq([1, 3, 1, 4, 3]))
     ```
 * 打包处理js:
+  
   * browserify js/src/app.js -o js/dist/bundle.js
 * 页面使用引入:
   ```
