@@ -7,7 +7,13 @@ export const data = {
   "excerpt": "",
   "headers": [],
   "git": {
-    "contributors": []
+    "contributors": [
+      {
+        "name": "Orion",
+        "email": "yiwenyun@outlook.com",
+        "commits": 1
+      }
+    ]
   },
   "filePathRelative": "project/README.md"
 }

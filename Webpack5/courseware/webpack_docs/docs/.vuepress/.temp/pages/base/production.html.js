@@ -39,7 +39,13 @@ export const data = {
     }
   ],
   "git": {
-    "contributors": []
+    "contributors": [
+      {
+        "name": "Orion",
+        "email": "yiwenyun@outlook.com",
+        "commits": 1
+      }
+    ]
   },
   "filePathRelative": "base/production.md"
 }

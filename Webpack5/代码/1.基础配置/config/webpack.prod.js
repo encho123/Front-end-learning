@@ -5,6 +5,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 // 用来获取处理样式的loader
+//执行的顺序：从右到左，从下到上，依次执行
+//执行顺序：sass-loader -> postcss-loader -> css-loader -> MiniCssExtractPlugin.loader
 function getStyleLoader(pre) {
   return [
     MiniCssExtractPlugin.loader, // 提取css成单独文件
@@ -20,9 +22,8 @@ function getStyleLoader(pre) {
       },
     },
     pre,
-  ].filter(Boolean);
+  ].filter(Boolean);  //boolean过滤掉false、undefined、null、0、NaN、''(空字符串)后的数组
 }
-
 module.exports = {
   // 入口
   entry: "./src/main.js", // 相对路径
@@ -52,7 +53,7 @@ module.exports = {
           },
           {
             test: /\.s[ac]ss$/,
-            use: getStyleLoader("sass-loader"),
+            use: getStyleLoader("sass-loader"), // sass-loader的作用：将sass编译成css
           },
           {
             test: /\.styl$/,
@@ -96,7 +97,8 @@ module.exports = {
     // plugin的配置
     new ESLintPlugin({
       // 检测哪些文件
-      context: path.resolve(__dirname, "../src"),
+      context: path.resolve(__dirname, "../src"), // 指定eslint检查的目录
+      // exclude: ["node_modules", "dist", "build", "webpack.config.js"], 
     }),
     new HtmlWebpackPlugin({
       // 模板：以public/index.html文件创建新的html文件

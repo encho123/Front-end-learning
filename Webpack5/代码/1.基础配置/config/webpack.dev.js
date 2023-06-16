@@ -109,8 +109,4 @@ module.exports = {
   // 模式
   mode: "development",
   devtool: "cheap-module-source-map",
-  resolve: {
-    extensions: ['.js', '.jsx', '.scss', '.css'],
-  }
-
 };
