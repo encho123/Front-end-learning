@@ -4,6 +4,8 @@
 
 通过插件我们可以扩展 webpack，加入自定义的构建行为，使 webpack 可以执行更广泛的任务，拥有更强的构建能力。
 
+*（Plugin的本质是一个类，在new的过程中，给Compiler 和Compilation添加新的属性和方法，相当于给那些钩子挂上函数，当webpack执行到这些特定的位置，就会出发这些函数的执行，从而获得我们想要的结果。 ）*
+
 ## Plugin 工作原理
 
 > webpack 就像一条生产线，要经过一系列处理流程后才能将源文件转换成输出结果。 这条生产线上的每个处理流程的职责都是单一的，多个流程之间有存在依赖关系，只有完成当前处理后才能交给下一个流程去处理。
@@ -18,6 +20,8 @@
 ### 什么是钩子
 
 钩子的本质就是：事件。为了方便我们直接介入和控制编译过程，webpack 把编译过程中触发的各类关键事件封装成事件接口暴露了出来。这些接口被很形象地称做：`hooks`（钩子）。开发插件，离不开这些钩子。
+
+*（在某些特定的时刻，通过函数调用的方式来处理对应的文件，和vue中的生命周期是类似的概念）*
 
 ### Tapable
 
@@ -47,11 +51,13 @@ exports.MultiHook = require("./MultiHook");
 
 ## Plugin 构建对象
 
-### Compiler
+### Compiler  （只有一个）
 
 compiler 对象中保存着完整的 Webpack 环境配置，每次启动 webpack 构建时它都是一个独一无二，仅仅会创建一次的对象。
 
 这个对象会在首次启动 Webpack 时创建，我们可以通过 compiler 对象上访问到 Webapck 的主环境配置，比如 loader 、 plugin 等等配置信息。
+
+**把所有webpack上面的配置放到这个对象上面，通过它的操作可以访问所有的配置**
 
 它有以下主要属性：
 
@@ -61,9 +67,9 @@ compiler 对象中保存着完整的 Webpack 环境配置，每次启动 webpack
 
 > [compiler hooks 文档](https://webpack.docschina.org/api/compiler-hooks/)
 
-### Compilation
+### Compilation （可能有多个）
 
-compilation 对象代表一次资源的构建，compilation 实例能够访问所有的模块和它们的依赖。
+compilation 对象代表一次资源的构建，compilation 实例能够访问所有的模块和它们的依赖。和Compiler的区别是，一个是整体，一个是个体的资源。
 
 一个 compilation 对象会对构建依赖图中所有模块，进行编译。 在编译阶段，模块会被加载(load)、封存(seal)、优化(optimize)、 分块(chunk)、哈希(hash)和重新创建(restore)。
 

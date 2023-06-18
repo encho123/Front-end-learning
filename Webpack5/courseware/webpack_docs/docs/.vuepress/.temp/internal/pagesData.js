@@ -75,4 +75,8 @@ export const pagesData = {
   "v-1d695a4e": () => import(/* webpackChunkName: "v-1d695a4e" */"F:/Program/Front-end-learning/Study/Webpack5/courseware/webpack_docs/docs/.vuepress/.temp/pages/senior/summary.html.js").then(({ data }) => data),
   // path: /404.html
   "v-3706649a": () => import(/* webpackChunkName: "v-3706649a" */"F:/Program/Front-end-learning/Study/Webpack5/courseware/webpack_docs/docs/.vuepress/.temp/pages/404.html.js").then(({ data }) => data),
+  // path: /origin/.~loader.html
+  "v-5b4aac34": () => import(/* webpackChunkName: "v-5b4aac34" */"F:/Program/Front-end-learning/Study/Webpack5/courseware/webpack_docs/docs/.vuepress/.temp/pages/origin/.~loader.html.js").then(({ data }) => data),
+  // path: /origin/.~plugin.html
+  "v-3a5a4274": () => import(/* webpackChunkName: "v-3a5a4274" */"F:/Program/Front-end-learning/Study/Webpack5/courseware/webpack_docs/docs/.vuepress/.temp/pages/origin/.~plugin.html.js").then(({ data }) => data),
 }

@@ -1,6 +1,7 @@
 <template><h1 id="plugin-原理" tabindex="-1"><a class="header-anchor" href="#plugin-原理" aria-hidden="true">#</a> Plugin 原理</h1>
 <h2 id="plugin-的作用" tabindex="-1"><a class="header-anchor" href="#plugin-的作用" aria-hidden="true">#</a> Plugin 的作用</h2>
 <p>通过插件我们可以扩展 webpack，加入自定义的构建行为，使 webpack 可以执行更广泛的任务，拥有更强的构建能力。</p>
+<p><em>（Plugin的本质是一个类，在new的过程中，给Compiler 和Compilation添加新的属性和方法，相当于给那些钩子挂上函数，当webpack执行到这些特定的位置，就会出发这些函数的执行，从而获得我们想要的结果。 ）</em></p>
 <h2 id="plugin-工作原理" tabindex="-1"><a class="header-anchor" href="#plugin-工作原理" aria-hidden="true">#</a> Plugin 工作原理</h2>
 <blockquote>
 <p>webpack 就像一条生产线，要经过一系列处理流程后才能将源文件转换成输出结果。 这条生产线上的每个处理流程的职责都是单一的，多个流程之间有存在依赖关系，只有完成当前处理后才能交给下一个流程去处理。
@@ -12,6 +13,7 @@ webpack 的事件流机制保证了插件的有序性，使得整个系统扩展
 <h2 id="webpack-内部的钩子" tabindex="-1"><a class="header-anchor" href="#webpack-内部的钩子" aria-hidden="true">#</a> Webpack 内部的钩子</h2>
 <h3 id="什么是钩子" tabindex="-1"><a class="header-anchor" href="#什么是钩子" aria-hidden="true">#</a> 什么是钩子</h3>
 <p>钩子的本质就是：事件。为了方便我们直接介入和控制编译过程，webpack 把编译过程中触发的各类关键事件封装成事件接口暴露了出来。这些接口被很形象地称做：<code>hooks</code>（钩子）。开发插件，离不开这些钩子。</p>
+<p><em>（在某些特定的时刻，通过函数调用的方式来处理对应的文件，和vue中的生命周期是类似的概念）</em></p>
 <h3 id="tapable" tabindex="-1"><a class="header-anchor" href="#tapable" aria-hidden="true">#</a> Tapable</h3>
 <p><code>Tapable</code> 为 webpack 提供了统一的插件接口（钩子）类型定义，它是 webpack 的核心功能库。webpack 中目前有十种 <code>hooks</code>，在 <code>Tapable</code> 源码中可以看到，他们是：</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token comment">// https://github.com/webpack/tapable/blob/master/lib/index.js</span>
@@ -34,9 +36,10 @@ exports<span class="token punctuation">.</span>MultiHook <span class="token oper
 <li><code>tapPromise</code>：Promise 方式注册异步钩子。</li>
 </ul>
 <h2 id="plugin-构建对象" tabindex="-1"><a class="header-anchor" href="#plugin-构建对象" aria-hidden="true">#</a> Plugin 构建对象</h2>
-<h3 id="compiler" tabindex="-1"><a class="header-anchor" href="#compiler" aria-hidden="true">#</a> Compiler</h3>
+<h3 id="compiler-只有一个" tabindex="-1"><a class="header-anchor" href="#compiler-只有一个" aria-hidden="true">#</a> Compiler  （只有一个）</h3>
 <p>compiler 对象中保存着完整的 Webpack 环境配置，每次启动 webpack 构建时它都是一个独一无二，仅仅会创建一次的对象。</p>
 <p>这个对象会在首次启动 Webpack 时创建，我们可以通过 compiler 对象上访问到 Webapck 的主环境配置，比如 loader 、 plugin 等等配置信息。</p>
+<p><strong>把所有webpack上面的配置放到这个对象上面，通过它的操作可以访问所有的配置</strong></p>
 <p>它有以下主要属性：</p>
 <ul>
 <li><code>compiler.options</code> 可以访问本次启动 webpack 时候所有的配置文件，包括但不限于 loaders 、 entry 、 output 、 plugin 等等完整配置信息。</li>
@@ -46,8 +49,8 @@ exports<span class="token punctuation">.</span>MultiHook <span class="token oper
 <blockquote>
 <p><a href="https://webpack.docschina.org/api/compiler-hooks/" target="_blank" rel="noopener noreferrer">compiler hooks 文档<ExternalLinkIcon/></a></p>
 </blockquote>
-<h3 id="compilation" tabindex="-1"><a class="header-anchor" href="#compilation" aria-hidden="true">#</a> Compilation</h3>
-<p>compilation 对象代表一次资源的构建，compilation 实例能够访问所有的模块和它们的依赖。</p>
+<h3 id="compilation-可能有多个" tabindex="-1"><a class="header-anchor" href="#compilation-可能有多个" aria-hidden="true">#</a> Compilation （可能有多个）</h3>
+<p>compilation 对象代表一次资源的构建，compilation 实例能够访问所有的模块和它们的依赖。和Compiler的区别是，一个是整体，一个是个体的资源。</p>
 <p>一个 compilation 对象会对构建依赖图中所有模块，进行编译。 在编译阶段，模块会被加载(load)、封存(seal)、优化(optimize)、 分块(chunk)、哈希(hash)和重新创建(restore)。</p>
 <p>它有以下主要属性：</p>
 <ul>

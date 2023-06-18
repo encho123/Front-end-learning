@@ -146,9 +146,13 @@ module.exports = function (content, map, meta) {
 
 > 由于同步计算过于耗时，在 Node.js 这样的单线程环境下进行此操作并不是好的方案，我们建议尽可能地使你的 loader 异步化。但如果计算量很小，同步 loader 也是可以的。
 
+**特别注意，所谓的同步和异步，是指这个callback函数是同步还是异步，通过loader里面的callback是直接调用的，this.callback,但是第二个loader里面是通过 this.async()所赋值的，这就不是同步了。而是异步**
+
+**这个函数中的 this 指向当前模块的上下文对象**
+
 ### 3. Raw Loader
 
-默认情况下，资源文件会被转化为 UTF-8 字符串，然后传给 loader。通过设置 raw 为 true，loader 可以接收原始的 Buffer。
+默认情况下，资源文件会被转化为 UTF-8 字符串，然后传给 loader。通过设置 raw 为 true，loader 可以接收原始的 Buffer（二进制数据），图片，图标等数据需要设置这个数据。
 
 ```js
 module.exports = function (content) {

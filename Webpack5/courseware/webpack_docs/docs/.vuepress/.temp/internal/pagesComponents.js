@@ -77,4 +77,8 @@ export const pagesComponents = {
   "v-1d695a4e": defineAsyncComponent(() => import(/* webpackChunkName: "v-1d695a4e" */"F:/Program/Front-end-learning/Study/Webpack5/courseware/webpack_docs/docs/.vuepress/.temp/pages/senior/summary.html.vue")),
   // path: /404.html
   "v-3706649a": defineAsyncComponent(() => import(/* webpackChunkName: "v-3706649a" */"F:/Program/Front-end-learning/Study/Webpack5/courseware/webpack_docs/docs/.vuepress/.temp/pages/404.html.vue")),
+  // path: /origin/.~loader.html
+  "v-5b4aac34": defineAsyncComponent(() => import(/* webpackChunkName: "v-5b4aac34" */"F:/Program/Front-end-learning/Study/Webpack5/courseware/webpack_docs/docs/.vuepress/.temp/pages/origin/.~loader.html.vue")),
+  // path: /origin/.~plugin.html
+  "v-3a5a4274": defineAsyncComponent(() => import(/* webpackChunkName: "v-3a5a4274" */"F:/Program/Front-end-learning/Study/Webpack5/courseware/webpack_docs/docs/.vuepress/.temp/pages/origin/.~plugin.html.vue")),
 }

@@ -1,5 +1,5 @@
 <template><h1 id="基本使用" tabindex="-1"><a class="header-anchor" href="#基本使用" aria-hidden="true">#</a> 基本使用</h1>
-<p><strong><code>Webpack</code> 是一个静态资源打包工具。</strong></p>
+<p><strong><code>Webpack</code> 是一个静态资源打包工具。</strong> <em>基于nodejs运行</em></p>
 <p>它会以一个或多个文件作为打包的入口，将我们整个项目所有文件编译组合成一个或多个文件输出出去。</p>
 <p>输出的文件就是编译好的文件，就可以在浏览器段运行了。</p>
 <p>我们将 <code>Webpack</code> 输出的文件叫做 <code>bundle</code>。</p>

@@ -1,3 +1,5 @@
+// 让开发模式和生产模式共用一个配置文件，通过环境变量来区分，isProduction为true时为生产模式，为false时为开发模式
+//   mode: isProduction ? "production" : "development",，三元表达式的简写方式
 const path = require("path");
 const EslintWebpackPlugin = require("eslint-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -31,13 +33,13 @@ const getStyleLoaders = (pre) => {
       options:
         pre === "less-loader"
           ? {
-              // antd自定义主题配置
-              // 主题色文档：https://ant.design/docs/react/customize-theme-cn#Ant-Design-%E7%9A%84%E6%A0%B7%E5%BC%8F%E5%8F%98%E9%87%8F
-              lessOptions: {
-                modifyVars: { "@primary-color": "#1DA57A" },
-                javascriptEnabled: true,
-              },
-            }
+            // antd自定义主题配置
+            // 主题色文档：https://ant.design/docs/react/customize-theme-cn#Ant-Design-%E7%9A%84%E6%A0%B7%E5%BC%8F%E5%8F%98%E9%87%8F
+            lessOptions: {
+              modifyVars: { "@primary-color": "#1DA57A" },
+              javascriptEnabled: true,
+            },
+          }
           : {},
     },
   ].filter(Boolean);
@@ -113,23 +115,23 @@ module.exports = {
       template: path.resolve(__dirname, "../public/index.html"),
     }),
     isProduction &&
-      new MiniCssExtractPlugin({
-        filename: "static/css/[name].[contenthash:10].css",
-        chunkFilename: "static/css/[name].[contenthash:10].chunk.css",
-      }),
+    new MiniCssExtractPlugin({
+      filename: "static/css/[name].[contenthash:10].css",
+      chunkFilename: "static/css/[name].[contenthash:10].chunk.css",
+    }),
     isProduction &&
-      new CopyPlugin({
-        patterns: [
-          {
-            from: path.resolve(__dirname, "../public"),
-            to: path.resolve(__dirname, "../dist"),
-            globOptions: {
-              // 忽略index.html文件
-              ignore: ["**/index.html"],
-            },
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "../public"),
+          to: path.resolve(__dirname, "../dist"),
+          globOptions: {
+            // 忽略index.html文件
+            ignore: ["**/index.html"],
           },
-        ],
-      }),
+        },
+      ],
+    }),
     !isProduction && new ReactRefreshWebpackPlugin(),
   ].filter(Boolean),
   mode: isProduction ? "production" : "development",

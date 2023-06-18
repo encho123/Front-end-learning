@@ -122,8 +122,10 @@ module<span class="token punctuation">.</span><span class="token function-variab
 </code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><blockquote>
 <p>由于同步计算过于耗时，在 Node.js 这样的单线程环境下进行此操作并不是好的方案，我们建议尽可能地使你的 loader 异步化。但如果计算量很小，同步 loader 也是可以的。</p>
 </blockquote>
+<p><strong>特别注意，所谓的同步和异步，是指这个callback函数是同步还是异步，通过loader里面的callback是直接调用的，this.callback,但是第二个loader里面是通过 this.async()所赋值的，这就不是同步了。而是异步</strong></p>
+<p><strong>这个函数中的 this 指向当前模块的上下文对象</strong></p>
 <h3 id="_3-raw-loader" tabindex="-1"><a class="header-anchor" href="#_3-raw-loader" aria-hidden="true">#</a> 3. Raw Loader</h3>
-<p>默认情况下，资源文件会被转化为 UTF-8 字符串，然后传给 loader。通过设置 raw 为 true，loader 可以接收原始的 Buffer。</p>
+<p>默认情况下，资源文件会被转化为 UTF-8 字符串，然后传给 loader。通过设置 raw 为 true，loader 可以接收原始的 Buffer（二进制数据），图片，图标等数据需要设置这个数据。</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">content</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// content是一个Buffer数据</span>
   <span class="token keyword">return</span> content<span class="token punctuation">;</span>

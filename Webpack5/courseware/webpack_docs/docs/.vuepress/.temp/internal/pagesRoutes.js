@@ -39,6 +39,8 @@ const routeItems = [
   ["v-5460e2da","/senior/reduceVolume.html",{"title":"减少代码体积"},["/senior/reduceVolume","/senior/reduceVolume.md"]],
   ["v-1d695a4e","/senior/summary.html",{"title":"总结"},["/senior/summary","/senior/summary.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
+  ["v-5b4aac34","/origin/.~loader.html",{"title":""},["/origin/.~loader","/origin/.~loader.md"]],
+  ["v-3a5a4274","/origin/.~plugin.html",{"title":""},["/origin/.~plugin","/origin/.~plugin.md"]],
 ]
 
 export const pagesRoutes = routeItems.reduce(

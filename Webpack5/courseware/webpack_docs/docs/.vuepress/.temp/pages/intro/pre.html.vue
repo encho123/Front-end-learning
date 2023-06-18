@@ -12,5 +12,11 @@
 <li>这对于学习项目部分内容非常有帮助。</li>
 </ul>
 </li>
+<li>
+<p>学习资源</p>
+<ul>
+<li><a href="http://webpack.wuhaolin.cn/%E5%89%8D%E8%A8%80.html" target="_blank" rel="noopener noreferrer">深入浅出Webpack<ExternalLinkIcon/></a></li>
+</ul>
+</li>
 </ul>
 </template>

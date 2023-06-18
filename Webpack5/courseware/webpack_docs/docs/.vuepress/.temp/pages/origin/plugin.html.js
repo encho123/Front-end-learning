@@ -44,14 +44,14 @@ export const data = {
       "children": [
         {
           "level": 3,
-          "title": "Compiler",
-          "slug": "compiler",
+          "title": "Compiler  （只有一个）",
+          "slug": "compiler-只有一个",
           "children": []
         },
         {
           "level": 3,
-          "title": "Compilation",
-          "slug": "compilation",
+          "title": "Compilation （可能有多个）",
+          "slug": "compilation-可能有多个",
           "children": []
         },
         {
