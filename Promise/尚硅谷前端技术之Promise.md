@@ -1103,9 +1103,7 @@ console.log(result);
 
 await 也是一个修饰符，只能放在async定义的函数内。可以理解为**等待**。
 
-await 修饰的如果是Promise对象，可以获取Promise中返回的内容（resolve或reject的参数），且取到值后语
-
-句才会往下执行；如果不是Promise对象：把这个非promise的东西当做await表达式的结果。
+await 修饰的如果是Promise对象，可以获取Promise中返回的内容（resolve或reject的参数），且取到值后语句才会往下执行；如果不是Promise对象：把这个非promise的东西当做await表达式的结果。
 
 注意事项
 - await必须写在async函数中，但是async函数中可以没有await

@@ -13,9 +13,9 @@
         1、async函数结合await表达式
            1.1 async函数中不一定要完全结合await
            1.2 有await的函数一定是async函数
-        2、await相当于then，可以直接拿到成功的Promise实例化对象的结果值
+        2、await相当于then，可以直接拿到成功的Promise实例化对象的结果值，也就是then中的第一个回调函数的参数
         3、await一定要写在async函数之中，但是async函数之中可以没有await
-        4、如果await表达式后面是Promise实例化对象，则await返回的是Promise的成功的结果值
+        4、如果await表达式后面是Promise实例化对象，则await返回的是Promise的成功的结果值，失败的结果值需要使用try...catch来捕获
         5、如果await表达式后面的其他值，则会直接将这个值作为await的返回值
     -->
     <script>
@@ -50,9 +50,12 @@
             }
             //有了try...catch后续的代码将继续执行
             console.log(1111);
+
+            //为什么1111是最后输出呢？是否意味在函数的内部执行是按照代码的顺序来执行的呢？
         }
         //调用
         main();
+        console.log(2222); //2222先输出，在函数的外部是同步先执行。
     </script>
 </body>
 

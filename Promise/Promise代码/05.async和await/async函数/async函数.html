@@ -31,9 +31,10 @@
         //可能是要将实现的功能封装到一个函数之中，为了更好的表示函数之中是异步，所以在函数的前面添加一个async
         async function main() {
             //函数的内部可以添加任意的语句来执行，但是其真正的目的主要是为了得到一个Promise对象的状态以及结果值
+            //如果没有返回值，那么其返回的结果值就是undefined
             // console.log('哈哈哈哈');
 
-            //情况1：返回非Promise对象的数据
+            //情况1：返回非Promise对象的数据  等价于 return Promise.resolve(100);
             // return 100;
 
             //情况2：返回的是Promise对象
@@ -44,12 +45,12 @@
             // })
 
             //情况3：抛出异常
-            // throw '出错啦';
-            throw new Error('出错啦');
+            throw '出错啦';
+            // throw new Error('出错啦');
         }
         //调用
         let result = main();
-
+        console.log(result);
         result.then(value => {
             console.log(value);
         }, reason => {

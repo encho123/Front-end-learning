@@ -5,11 +5,12 @@
 
 #### 具体的内容
 
-1. JavaScript的初级和高级
-2. ES6模块化编程
 3. Vue2_Vue3
 4. TypeScipt
-5. Vue3的项目学
+3. Vue3项目
+4. Ajax
+5. Promise
+6. Webpack
 
 
 

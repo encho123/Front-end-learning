@@ -15,8 +15,9 @@
     <script>
         async function main() {
             console.log(1111);
-            let result = await Promise.resolve('ok');
+            let result = await Promise.resolve('ok');  //await后面的代码会等待 await执行完毕才会执行
             console.log(result);
+            // console.log(Promise.resolve('ok'));
             console.log(2222);
             console.log(3333);
             console.log(4444);
