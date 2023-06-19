@@ -79,4 +79,6 @@ export const pagesData = {
   "v-5b4aac34": () => import(/* webpackChunkName: "v-5b4aac34" */"F:/Program/Front-end-learning/Study/Webpack5/courseware/webpack_docs/docs/.vuepress/.temp/pages/origin/.~loader.html.js").then(({ data }) => data),
   // path: /origin/.~plugin.html
   "v-3a5a4274": () => import(/* webpackChunkName: "v-3a5a4274" */"F:/Program/Front-end-learning/Study/Webpack5/courseware/webpack_docs/docs/.vuepress/.temp/pages/origin/.~plugin.html.js").then(({ data }) => data),
+  // path: /intro/.~asset.html
+  "v-005a7f75": () => import(/* webpackChunkName: "v-005a7f75" */"F:/Program/Front-end-learning/Study/Webpack5/courseware/webpack_docs/docs/.vuepress/.temp/pages/intro/.~asset.html.js").then(({ data }) => data),
 }

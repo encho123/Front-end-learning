@@ -41,6 +41,7 @@ const routeItems = [
   ["v-3706649a","/404.html",{"title":""},["/404"]],
   ["v-5b4aac34","/origin/.~loader.html",{"title":""},["/origin/.~loader","/origin/.~loader.md"]],
   ["v-3a5a4274","/origin/.~plugin.html",{"title":""},["/origin/.~plugin","/origin/.~plugin.md"]],
+  ["v-005a7f75","/intro/.~asset.html",{"title":"学习资料"},["/intro/.~asset","/intro/.~asset.md"]],
 ]
 
 export const pagesRoutes = routeItems.reduce(
