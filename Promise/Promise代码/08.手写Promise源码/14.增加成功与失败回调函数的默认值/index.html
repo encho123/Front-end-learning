@@ -16,9 +16,9 @@
     -->
     <script>
         const p1 = new Promise((resolve, reject) => {
-            // resolve(100);
+            resolve(100);
             // reject('error');
-            throw '异常'
+            // throw '异常'
         })
         const p2 = p1.then();
         console.log(p2);

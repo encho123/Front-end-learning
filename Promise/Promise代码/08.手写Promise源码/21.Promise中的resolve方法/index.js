@@ -109,7 +109,7 @@
         if (value instanceof Promise) {
             return value;
         } else {
-            return new Promise(resolve => {
+            return new Promise((resolve) => {
                 resolve(value)
             })
         }

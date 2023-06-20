@@ -156,7 +156,7 @@
                 // })
 
                 //简化
-                value.then(resolve, reject);
+                value.then(resolve, reject);  //这样的一种简单的写法，需要熟悉          
             })
         })
     }

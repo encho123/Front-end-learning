@@ -20,7 +20,7 @@
         结果值就是所有成功的Promise实例化对象的结果值组成的数组
 
         当如果这些Promise实例化对象其中有一个是失败的话，
-        则直接返回的是失败的Promise实例化对象，
+        则直接返回的是失败的Promise实例化对象，后面的就不在执行了。
         结果值就是失败的这个Promise实例化对象的结果值
     -->
     <script>
@@ -32,8 +32,8 @@
 
         const p2 = new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve(200);
-            }, 50)
+                reject(200);
+            }, 150)
         })
 
         const p3 = new Promise((resolve, reject) => {

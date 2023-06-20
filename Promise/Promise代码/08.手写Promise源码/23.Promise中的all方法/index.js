@@ -123,22 +123,26 @@
         //定义一个计数的变量
         let index = 0;
         //定义一个空数组，用来添加所有成功的promise实例化对象
-        let successArr = new Array(PromiseArr.length);
+        let successArr = new Array(PromiseArr.length); // 定义了一个长度为PromiseArr.length的空数组
         return new Promise((resolve, reject) => {
             //forEach回调函数的参数
             //第一个参数：数组中的每一个值
             //第二个参数：数组中的每一个值的下标
             PromiseArr.forEach((value, i) => {
+                //这个循环会把所有的promise实例化对象都执行一遍，但是只要执行了一次reject，
+                //后面再次执行到这个地方的时候，就不会再执行了，因为promise的状态已经改变了，所以不会再执行了
                 value.then(v => {
                     //既然可以能够走到成功的回调函数，证明已经是成功的Promise，所以要算一个
                     index++;
                     successArr[i] = v;
+                    // console.log(index);
                     //当计数的数量和实际数组的数量相同，证明就是说每一个Promise都是成功的
                     if (index === PromiseArr.length) {
                         resolve(successArr);
                     }
                 }, reason => {
                     //有一个失败的Promise实例化对象，则整体就是一个失败的Promise实例化对象
+                    console.log('ok');
                     reject(reason)
                 })
             })
