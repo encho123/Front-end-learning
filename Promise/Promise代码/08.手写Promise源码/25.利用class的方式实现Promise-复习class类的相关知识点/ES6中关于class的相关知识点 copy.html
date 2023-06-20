@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Promise {
+            // a = 1;
+            // b = 2;
+            // // 这个方法是在原型上的
+            // say() {
+            //     console.log('say');
+            // }
+            // //这个方法是在实例化对象身上的，注意他们的区别 书写方式不同
+            // student = function () {
+            //     console.log('student');
+            // }
+            constructor(name, age) {
+                // console.log(this);
+                this.name = name;
+                this.age = age;
+            }
+            study() {
+                console.log(this.name + '+学习...');
+            }
+
+            static a = 1;
+            static b = () => {
+                console.log('b');
+            }
+
+        }
+        let p1 = new Promise('lisi', 18);
+        console.log(p1);
+        console.log(p1.study());
+        console.log(Promise.a);
+        console.log(Promise.b());
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数实践</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: #58a;
+        }
+    </style>
+</head>
+<body>
+    <div id="ad"></div>
+    <script>
+        //设置了一个场景，让大家理解this的指向
+        let fn1 = function (fn2, fn3) {
+            //传输2个函数，在函数里面调用这个函数
+            //新建了一个对象，并且把传输的函数添加到对象里面
+            //调用这个函数，看看这个函数里面的this指向谁
+            //观察fn2和fn3里面的this指向，充分证明，箭头函数的this是在定义的时候就确定了，被定义时this指向的对象就是它的this
+            let obj = {
+                name: '张三',
+            }
+            //给对象添加一个方法
+            obj.fn2 = fn2;
+            obj.fn3 = fn3;
+            //调用fn
+            obj.fn2();
+            obj.fn3();
+            console.log(this);
+        }
+        // 普通函数写法
+        let fn2 = function () {
+            console.log(this);
+        }
+        // 箭头函数写法
+        let fn3 = () => {
+            console.log(this);
+        }
+        // 调用fn1
+        fn1(fn2, fn3);
+
+
+    </script>
+</body>
+
+</html>
