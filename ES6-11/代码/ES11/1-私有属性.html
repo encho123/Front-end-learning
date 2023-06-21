@@ -7,20 +7,20 @@
 </head>
 <body>
     <script>
-        class Person{
+        class Person {
             //公有属性
             name;
-            //私有属性
+            //私有属性   和private一样
             #age;
             #weight;
             //构造方法
-            constructor(name, age, weight){
+            constructor(name, age, weight) {
                 this.name = name;
                 this.#age = age;
                 this.#weight = weight;
             }
 
-            intro(){
+            intro() {
                 console.log(this.name);
                 console.log(this.#age);
                 console.log(this.#weight);

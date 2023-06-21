@@ -8,23 +8,23 @@
 <body>
     <script>
         //声明两个promise对象
-        const p1 = new Promise((resolve, reject)=>{
-            setTimeout(()=>{
+        const p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
                 resolve('商品数据 - 1');
-            },1000)
+            }, 1000)
         });
 
-        const p2 = new Promise((resolve, reject)=>{
-            setTimeout(()=>{
+        const p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
                 resolve('商品数据 - 2');
                 // reject('出错啦!');
-            },1000)
+            }, 1000)
         });
 
-        //调用 allsettled 方法
+        //调用 allsettled 方法  allsettled 方法的返回结果都是成功的Promise 对象, 
         // const result = Promise.allSettled([p1, p2]);
-        
-        // const res = Promise.all([p1, p2]);
+
+        // const res = Promise.all([p1, p2]);  注意和all的区别
 
         console.log(res);
 

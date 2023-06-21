@@ -34,7 +34,7 @@
             }
         }
     }
-    //借助于Object.assign方法使用一个对象和prototype对象进行合并
+    //借助于Object.assign方法使用一个对象和prototype对象进行合并,有就覆盖，没有就添加
     Object.assign(Promise.prototype, {
         //ES6中方法的简写
         //onfulfilled:成功的回调函数

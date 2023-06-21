@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象继承</title>
+</head>
+<body>
+    <script>
+        //手机构造函数
+        function Phone(brand, price) {
+            this.brand = brand;
+            this.price = price;
+        }
+
+        Phone.prototype.call = function () {
+            console.log("我可以打电话");
+        }
+
+        //智能手机
+        function SmartPhone(brand, price, color, size) {
+            Phone.call(this, brand, price);  // 调用phone函数，将this指向SmartPhone
+            this.color = color;
+            this.size = size;
+        }
+
+        //设置子级构造函数的原型
+        SmartPhone.prototype = new Phone;  //目的是为了获得Phone的实例对象的所有属性和方法，以及原型对象的属性和方法
+        SmartPhone.prototype.constructor = SmartPhone;  //可以加也可以不加
+
+        //声明子类的方法  重写父类的方法，或者是和父类的方法合并
+        SmartPhone.prototype.photo = function () {
+            console.log("我可以拍照")
+        }
+
+        SmartPhone.prototype.playGame = function () {
+            console.log("我可以玩游戏");
+        }
+
+        const chuizi = new SmartPhone('锤子', 2499, '黑色', '5.5inch');
+
+        console.log(chuizi);
+        chuizi.call();
+        chuizi.photo();
+        console.dir(SmartPhone);
+
+    </script>
+</body>
+</html>

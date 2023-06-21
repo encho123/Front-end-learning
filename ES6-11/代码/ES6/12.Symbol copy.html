@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>symbol</title>
+</head>
+
+<body>
+    <script>
+        // let s = Symbol();
+        // let m = Symbol();
+        // console.dir(s);
+        // console.dir(m);
+        // console.log(s === m);
+
+        //another
+
+        // let s1 = Symbol("foo");
+        // let s2 = Symbol("bar");
+        // console.dir(s1)
+        // console.log(s1);
+
+        // function foo() {
+        //     return s1;
+        // }
+
+        // foo.bar = "hello";
+        // foo.fn = function () {
+        //     console.log("fn");
+        // }
+
+        // console.dir(foo);
+        // console.dir(Symbol);
+        //新建一个构造函数
+        function MyObject() {
+            // this.name = 'niubi'
+        }
+        let obj = new MyObject();
+        class Person {
+            name = 'niubi'
+        }
+        console.log(obj instanceof MyObject);
+        per = new Person()
+        console.log(per instanceof Person);
+        console.log(per);
+        let arr = [1, 2, 3];
+        let arr2 = [4, 5, 6];
+        arr[Symbol.isConcatSpreadable] = false;
+        console.log(Symbol.isConcatSpreadable === Symbol.isConcatSpreadable);
+        console.log(arr);
+        console.log(arr.concat(arr2));
+        // console.log(arr[Symbol.isConcatSpreadable]);
+    </script>
+</body>
+
+</html>

@@ -7,44 +7,50 @@
 </head>
 <body>
     <script>
-        class Phone{
+        class Phone {
             //构造方法
-            constructor(brand, price){
+            constructor(brand, price) {
                 this.brand = brand;
                 this.price = price;
             }
             //父类的成员属性
-            call(){
+            call() {
                 console.log("我可以打电话!!");
             }
         }
 
         class SmartPhone extends Phone {
             //构造方法
-            constructor(brand, price, color, size){
-                super(brand, price);// Phone.call(this, brand, price)
+            constructor(brand, price, color, size) {
+                super(brand, price);// Phone.call(this, brand, price)  调用father的构造方法
                 this.color = color;
                 this.size = size;
             }
-
-            photo(){
+            // 这些方法都是放在原型对象上的
+            photo() {
                 console.log("拍照");
             }
 
-            playGame(){
+            playGame() {
                 console.log("玩游戏");
             }
 
-            call(){
+            call() {
                 console.log('我可以进行视频通话');
+            }
+            //这个方法是放在实例对象上的
+            say = function () {
+                console.log('我可以说话');
             }
         }
 
-        const xiaomi = new SmartPhone('小米',799,'黑色','4.7inch');
-        // console.log(xiaomi);
+        const xiaomi = new SmartPhone('小米', 799, '黑色', '4.7inch');
+        console.log(xiaomi);
         xiaomi.call();
         xiaomi.photo();
         xiaomi.playGame();
+        console.dir(SmartPhone);
+        console.log(SmartPhone);
     </script>
 </body>
 </html>

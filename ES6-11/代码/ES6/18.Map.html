@@ -11,14 +11,14 @@
         let m = new Map();
 
         //添加元素
-        m.set('name','尚硅谷');
-        m.set('change', function(){
+        m.set('name', '尚硅谷');
+        m.set('change', function () {
             console.log("我们可以改变你!!");
         });
         let key = {
-            school : 'ATGUIGU'
+            school: 'ATGUIGU'
         };
-        m.set(key, ['北京','上海','深圳']);
+        m.set(key, ['北京', '上海', '深圳']);
 
         //size
         // console.log(m.size);
@@ -34,12 +34,21 @@
         // m.clear();
 
         //遍历
-        for(let v of m){
+        for (let v of m) {
             console.log(v);
-        }
+        }  //输出的是一个数组
 
         // console.log(m);
 
+        // let obj = {
+        //     name: '尚硅谷',
+        //     age: 10,
+        //     hobyy: 'coding'
+        // }
+
+        // for (let v of obj) {
+        //     console.log(v);
+        // }  //报错 因为 obj 不是一个可迭代对象
     </script>
 </body>
 </html>

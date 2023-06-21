@@ -18,6 +18,8 @@
                 'xiaotian',
                 'knight'
             ],
+            //定义一个新的数组
+            firends: ['xiaoming', 'xiaoning', 'xiaotian', 'knight'],
             [Symbol.iterator]() {
                 //索引变量
                 let index = 0;
@@ -31,12 +33,32 @@
                             index++;
                             //返回结果
                             return result;
-                        }else{
-                            return {value: undefined, done: true};
+                        } else {
+                            return { value: undefined, done: true };
                         }
                     }
                 };
-            }
+            },
+            //只能定义一次，不能重复定义，当你用for of来遍历这个对象的时候，就会调用这个方法。
+            [Symbol.iterator]() {
+                //索引变量
+                let index = 0;
+                //
+                let _this = this;
+                return {
+                    next: function () {
+                        if (index < _this.firends.length) {
+                            const result = { value: _this.firends[index], done: false };
+                            //下标自增
+                            index++;
+                            //返回结果
+                            return result;
+                        } else {
+                            return { value: undefined, done: true };
+                        }
+                    }
+                };
+            },
         }
 
         //遍历这个对象 
