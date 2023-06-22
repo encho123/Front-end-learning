@@ -55,7 +55,6 @@
                             //接收成功的回调函数的结果
                             const value = onfulfilled(this.PromiseResult);
                             //判断value是不是Promise的实例化对象
-                            //判断value是否为Promise的实例
                             if (value instanceof Promise) {
                                 // value.then(v => {
                                 //     resolve(v);

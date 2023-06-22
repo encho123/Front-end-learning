@@ -22,7 +22,7 @@
         // console.log(result);
 
 
-        //1. this 是静态的. this 始终指向函数声明时所在作用域下的 this的值
+        //1. this 是静态的. this 始终指向函数声明（定义）时所在作用域下的this的值
         function getName() {
             console.log(this.name);
         }
@@ -68,6 +68,12 @@
         // 而且语句的执行结果就是函数的返回值
         let pow = n => n * n;
         console.log(pow(7));
+
+        //只是执行代码，没有返回值的
+        // let pow2 = n => {
+        //     n * n;
+        // }
+        // console.log(pow2(7));
 
     </script>
 </body>

@@ -21,6 +21,8 @@
             //定义一个新的数组
             firends: ['xiaoming', 'xiaoning', 'xiaotian', 'knight'],
             [Symbol.iterator]() {
+                // Symbol.iterator是一个内置的Symbol值，类似于一个字符串，但是它是唯一的，
+                //它的作用是用来定义一个对象的默认迭代器的方法。
                 //索引变量
                 let index = 0;
                 //
@@ -39,29 +41,9 @@
                     }
                 };
             },
-            //只能定义一次，不能重复定义，当你用for of来遍历这个对象的时候，就会调用这个方法。
-            [Symbol.iterator]() {
-                //索引变量
-                let index = 0;
-                //
-                let _this = this;
-                return {
-                    next: function () {
-                        if (index < _this.firends.length) {
-                            const result = { value: _this.firends[index], done: false };
-                            //下标自增
-                            index++;
-                            //返回结果
-                            return result;
-                        } else {
-                            return { value: undefined, done: true };
-                        }
-                    }
-                };
-            },
         }
 
-        //遍历这个对象 
+        //遍历这个对象  通过iterator方法来实现的
         for (let v of banji) {
             console.log(v);
         }

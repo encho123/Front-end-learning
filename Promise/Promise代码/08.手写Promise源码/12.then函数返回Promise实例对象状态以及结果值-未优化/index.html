@@ -25,20 +25,20 @@
     -->
     <script>
         let p = new Promise((resolve, reject) => {
-            // resolve(100);
+            resolve(100);
             reject('aaa');
             // throw '异常';
         });
         const p2 = p.then(value => {
             // console.log(value);
             // return [1, 2, 3];
-            // return new Promise((resolve, reject) => {
-            //     // resolve('okokok');
-            //     //reject('error');
-            //     throw '异常2'
-            // })
+            return new Promise((resolve, reject) => {
+                resolve('okokok');
+                //reject('error');
+                // throw '异常2'
+            })
 
-            throw '异常3'
+            // throw '异常3'
         }, reason => {
             //console.log(reason);
             //return reason;
