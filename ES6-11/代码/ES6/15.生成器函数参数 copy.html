@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器函数参数</title>
+</head>
+<body>
+    <script>
+        function* gen(arg) {
+            console.log(arg);
+            let one = 2 * (yield 111 + arg);
+            console.log(one);
+            let two = yield 222;
+            console.log(two);
+            let three = yield 333;
+            console.log(three);
+        }
+
+        //执行获取迭代器对象
+        let it = gen(2);
+        // console.log(it);
+        console.log(it.next());
+        console.log(it.next(5));
+        // next方法可以传入实参，传入的参数会作为上一个yield表达式运算之后的返回值
+        //相当于是替换yield后面的表达式。即：2 * (yield 111 + 2) = 2 * 5 = 10
+
+    </script>
+</body>
+</html>

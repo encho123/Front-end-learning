@@ -54,6 +54,7 @@
                         try {
                             //接收成功的回调函数的结果
                             const value = onfulfilled(this.PromiseResult);
+                            console.log(value);
                             //判断value是不是Promise的实例化对象
                             if (value instanceof Promise) {
                                 // value.then(v => {
@@ -62,7 +63,7 @@
                                 //     reject(r);
                                 // })
                                 //简化
-                                value.then(resolve, reject);  //这个地方还是有点不是非常的清晰，为什么可以直接调用then
+                                value.then(resolve, reject);
                             } else {
                                 //不是返回的Promise实例化对象
                                 //将返回的结果直接作为resolve这个方法的实际参数
