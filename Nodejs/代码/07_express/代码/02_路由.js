@@ -20,7 +20,7 @@ app.post('/login', (req, res) => {
   res.end('login login')
 });
 
-//匹配所有的方法
+//匹配所有的方法 all请求方法任意
 app.all('/test', (req, res) => {
   res.end('test test');
 })
@@ -29,6 +29,7 @@ app.all('/test', (req, res) => {
 app.all('*', (req, res) => {
   res.end('404 not Found')
 });
+//那个可以匹配就匹配那个，如果都匹配不到，就会响应404
 
 //监听端口, 启动服务
 app.listen(3000, () => {

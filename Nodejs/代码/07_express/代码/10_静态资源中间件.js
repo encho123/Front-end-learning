@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
   res.send('我才是首页~~~');
 });
 
-//静态资源中间件设置
+//静态资源中间件设置 确定静态资源的根目录。
 app.use(express.static(__dirname + '/public'));
 
 

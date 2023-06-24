@@ -13,12 +13,13 @@ app.get('/home', (req, res) => {
   res.send('前台首页');
 });
 
-//声明中间件
+//声明中间件  使用中间件函数的方式是在app路由传输的时候加入中间件函数
 let checkCodeMiddleware = (req, res, next) => {
-  //判断 URL 中是否 code 参数等于 521
-  if(req.query.code === '521'){
+  //判断 URL 中是否 code 参数等于 521  next()相当于放行一样。
+  // 这个和vue里面的路由守卫一样
+  if (req.query.code === '521') {
     next();
-  }else{
+  } else {
     res.send('暗号错误');
   }
 }
@@ -33,7 +34,7 @@ app.get('/setting', checkCodeMiddleware, (req, res) => {
   res.send('设置页面');
 });
 
-app.all('*',(req, res) => {
+app.all('*', (req, res) => {
   res.send('<h1>404 Not Found</h1>')
 })
 

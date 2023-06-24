@@ -4,11 +4,11 @@ const express = require('express');
 //创建应用对象
 const app = express();
 
-//创建路由
+//创建路由  /:id占位符 代表一个参数
 app.get('/:id.html', (req, res) => {
   //获取 URL 路由参数
   console.log(req.params.id);
-  res.setHeader('content-type','text/html;charset=utf-8');
+  res.setHeader('content-type', 'text/html;charset=utf-8');
   res.end('商品详情');
 });
 

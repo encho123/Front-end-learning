@@ -1,23 +1,26 @@
 //导入 express
 const express = require('express');
 //导入 json 文件
-const {singers} = require('./singers.json');
+const { singers } = require('./singers.json');
+console.log(singers instanceof Array);
+// console.log(singers);
 //创建应用对象
 const app = express();
 
 //创建路由
 app.get('/singer/:id.html', (req, res) => {
   //获取路由参数
-  let {id} = req.params;
+  let { id } = req.params;
+  console.log(req.params);
   //在数组中寻找对应 id 的数据
   let result = singers.find(item => {
-    if(item.id === Number(id)){
+    if (item.id === Number(id)) {
       return true;
     }
   });
 
   //判断
-  if(!result){
+  if (!result) {
     res.statusCode = 404;
     res.end(`<h1>404 Not Found</h1>`)
     return;
