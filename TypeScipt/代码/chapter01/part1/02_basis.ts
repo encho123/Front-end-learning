@@ -4,6 +4,7 @@ let a: number;
 // a 的类型设置为了number，在以后的使用过程中a的值只能是数字
 a = 10;
 a = 33;
+// a='lll'
 // a = 'hello'; // 此行代码会报错，因为变量a的类型是number，不能赋值字符串
 let b: string;
 b = 'hello';
@@ -15,6 +16,7 @@ b = 'hello';
 // 如果变量的声明和赋值是同时进行的，TS可以自动对变量进行类型检测
 let c = false;
 c = true;
+// c = 1;
 
 // JS中的函数是不考虑参数的类型和个数的
 // function sum(a, b){
@@ -24,7 +26,7 @@ c = true;
 // console.log(sum(123, 456)); // 579
 // console.log(sum(123, "456")); // "123456"
 
-function sum(a: number, b: number): number{
+function sum(a: number, b: number): number {
     return a + b;
 }
 

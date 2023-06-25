@@ -6,6 +6,7 @@ a = 10;
 let b: "male" | "female";
 b = "male";
 b = "female";
+// b = 'lll'
 
 let c: boolean | string;
 c = true;
@@ -27,16 +28,17 @@ e = 10;
 e = "hello";
 e = true;
 
-let s:string;
+let s: string;
 
 // d的类型是any，它可以赋值给任意变量
 // s = d;
-
+// 
 e = 'hello';
 
 // unknown 实际上就是一个类型安全的any
 // unknown类型的变量，不能直接赋值给其他变量
-if(typeof e === "string"){
+
+if (typeof e === "string") {
     s = e;
 }
 
@@ -51,10 +53,10 @@ s = e as string;
 s = <string>e;
 
 // void 用来表示空，以函数为例，就表示没有返回值的函数
-function fn(): void{
+function fn(): void {
 }
 
 // never 表示永远不会返回结果
-function fn2(): never{
+function fn2(): never {
     throw new Error('报错了！');
 }

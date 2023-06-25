@@ -16,7 +16,8 @@ mongoose.connection.once('open', () => {
   let BookSchema = new mongoose.Schema({
     name: String,
     author: String,
-    price: Number
+    price: Number,
+    // age: Number,
   });
 
   //6. 创建模型对象  对文档操作的封装对象
@@ -29,7 +30,7 @@ mongoose.connection.once('open', () => {
     price: 19.9
   }, (err, data) => {
     //判断是否有错误
-    if(err) {
+    if (err) {
       console.log(err);
       return;
     }
@@ -45,10 +46,10 @@ mongoose.connection.once('open', () => {
 // 设置连接错误的回调
 mongoose.connection.on('error', () => {
   console.log('连接失败');
-}); 
+});
 
 //设置连接关闭的回调
 mongoose.connection.on('close', () => {
   console.log('连接关闭');
-}); 
+});
 

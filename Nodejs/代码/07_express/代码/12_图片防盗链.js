@@ -4,18 +4,18 @@ const express = require('express');
 //创建应用对象
 const app = express();
 
-//声明中间件
+//声明中间件 use里面就是一个函数，这个函数有三个参数，分别是req,res,next
 app.use((req, res, next) => {
   //检测请求头中的 referer 是否为 127.0.0.1
   //获取 referer
   let referer = req.get('referer');
-  if(referer){
+  if (referer) {
     //实例化
     let url = new URL(referer);
     //获取 hostname
     let hostname = url.hostname;
     //判断
-    if(hostname !== '127.0.0.1'){
+    if (hostname !== '127.0.0.1') {
       //响应 404 
       res.status(404).send('<h1>404 Not Found</h1>');
       return;

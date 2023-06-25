@@ -7,18 +7,18 @@ a = function () {
 // {} 用来指定对象中可以包含哪些属性
 // 语法：{属性名:属性值,属性名:属性值}
 // 在属性名后边加上?，表示属性是可选的
-let b: {name: string, age?: number};
-b = {name: '孙悟空', age: 18};
+let b: { name: string, age?: number };
+b = { name: '孙悟空', age: 18 };
 
 // [propName: string]: any 表示任意类型的属性
-let c: {name: string, [propName: string]: any};
-c = {name: '猪八戒', age: 18, gender: '男'};
+let c: { name: string, [propName: string]: any };
+c = { name: '猪八戒', age: 18, gender: '男' };
 
 /*
 *   设置函数结构的类型声明：
 *       语法：(形参:类型, 形参:类型 ...) => 返回值
 * */
-let d: (a: number ,b: number)=>number;
+let d: (a: number, b: number) => number;
 // d = function (n1: string, n2: string): number{
 //     return 10;
 // }
@@ -50,12 +50,12 @@ h = ['hello', 123];
 * enum 枚举
 *
 * */
-enum Gender{
+enum Gender {
     Male,
     Female
 }
 
-let i: {name: string, gender: Gender};
+let i: { name: string, gender: Gender };
 i = {
     name: '孙悟空',
     gender: Gender.Male // 'male'
