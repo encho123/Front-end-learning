@@ -1,0 +1,32 @@
+// 第一个参数@_代表后面所有的引入都会直接，套用这个样式
+.triangle(@_, @wwww, @ccccc) {
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+}
+
+// L代表left，相当于是一个标识符。相当于一个名字。后面的@w和@c是参数
+// 这样在后面引入的时候，就可以识别是用哪个
+.triangle(L, @w, @c) {
+    border-width: @w;
+    border-style: dashed solid dashed dashed;
+    border-color: transparent @c transparent transparent;
+}
+
+.triangle(R, @w, @c) {
+    border-width: @w;
+    border-style: dashed dashed dashed solid;
+    border-color: transparent transparent transparent @c;
+}
+
+.triangle(T, @w, @c) {
+    border-width: @w;
+    border-style: dashed dashed solid dashed;
+    border-color: transparent transparent @c transparent;
+}
+
+.triangle(B, @w, @c) {
+    border-width: @w;
+    border-style: solid dashed dashed dashed;
+    border-color: @c transparent transparent transparent;
+}
