@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<!--如果多个规则与同一个元素匹配，而且有些声明互相冲突时，特殊性越大的越占优势-->
-		<style type="text/css">
-			*{
-				margin: 0;
-				padding: 0;
-				color: #000000;
-			}
-			
-			
-			#test{
-				width: 200px;
-				height: 200px;
-				color: deeppink;
-			}
-			#inner{
-				width: 100px;
-				height: 100px;
-			}
-		</style>
-	</head>
-	<body>
-		<div id="test" class="test">
-				test
-				<div id="inner">
-					inner
-				</div>
+<head>
+	<meta charset="UTF-8">
+	<title>doucment</title>
+	<!--如果多个规则与同一个元素匹配，而且有些声明互相冲突时，特殊性越大的越占优势-->
+	<!-- CSS中的继承规则是：
+           1. 部分属性会默认继承：例如字体样式、颜色、文本对齐等属性在默认情况下会被子元素继承。
+           2. 继承只会发生在某些元素之间：只有某些特定的元素属性才能被继承，
+		   而其他属性则不能。例如，边框、背景、宽度和高度等框模型属性不能被继承
+           3. 使用inherit关键字：要明确指定一个属性应该继承，可以在子元素样式中使用
+           inherit关键字。这样，子元素将继承与父元素相同的属性值。 -->
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			color: #000000;
+		}
+
+
+		#test {
+			width: 200px;
+			height: 200px;
+			color: deeppink;
+			border: rebeccapurple 1px solid;
+		}
+
+		#inner {
+			width: 100px;
+			height: 100px;
+			border: #000000 1px solid;
+		}
+	</style>
+</head>
+<body>
+	<div id="test" class="test">
+		test
+		<div id="inner">
+			inner
 		</div>
-	</body>
+	</div>
+</body>
 </html>
