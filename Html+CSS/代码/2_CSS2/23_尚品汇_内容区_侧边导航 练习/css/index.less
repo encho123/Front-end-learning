@@ -1,0 +1,180 @@
+@topclor: #FFECECEC;
+
+// 通用的样式
+.container {
+    height: 30px;
+    width: 1190px;
+    margin: 0 auto;
+}
+
+// 顶部导航栏
+.topbar {
+    height: 30px;
+    background-color: @topclor;
+    font-size: 12px;
+    line-height: 30px;
+
+    .hello {
+        margin-right: 20px;
+    }
+
+    .login {
+        margin-right: 10px;
+        padding-right: 10px;
+        border-right: 1px solid black;
+    }
+
+    li {
+        float: left;
+
+        a {
+            padding-right: 10px;
+            margin-left: 10px;
+            border-right: 1px solid black;
+        }
+
+        &:last-child a {
+            border-right: none;
+            padding-right: 0;
+        }
+    }
+
+}
+
+// 头部区域
+.head {
+    height: 120px;
+    // background-color: dimgrey;
+
+    .seach {
+        font-size: 0;
+
+        .txt {
+            width: 510px;
+            height: 36px;
+            margin-top: 40px;
+            border: 1px solid #ccc;
+        }
+
+        .btn {
+            width: 60px;
+            height: 36px;
+            margin-top: 40px;
+            background-color: #ff6700;
+            border: none;
+            color: #fff;
+            background-image: url('../images/serch_icon.png');
+            background-repeat: no-repeat;
+            background-position: 18px 6px;
+        }
+    }
+}
+
+// 主导航
+.mani-nav {
+    height: 48px;
+    border-bottom: 1px solid red;
+
+
+
+    li {
+        float: left;
+        // padding-top: 5px;
+        margin-right: 20px;
+        height: 48px;
+        line-height: 48px;
+        font-size: 14px;
+
+        a {
+            color: black;
+        }
+    }
+
+    li:first-child {
+        background: red;
+        padding: 0 30px;
+
+        a {
+            color: #fff;
+        }
+    }
+}
+
+
+.content {
+    margin-top: 10px;
+
+    // 主体内容左侧
+    .leftsider {
+        width: 146px;
+        height: 438px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #ccc;
+
+        ul {
+            li:hover {
+                background-color: red;
+            }
+
+            a:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    // 中间部分 
+    .middle {
+        margin-left: 10px;
+        margin-right: 10px;
+
+        .img {
+            height: 458 px;
+        }
+    }
+
+    // 右侧部分
+    .rightsider {
+        width: 290px;
+        height: 438px;
+
+        // 上部分
+        .up {
+            width: 288px;
+            height: 196px;
+            padding: 14px 0 0 14px;
+            border: 1px solid #ccc;
+
+            .kkbc {
+                border-bottom: 1px solid #ccc;
+
+                .leftfix {
+                    font-size: 16px;
+                }
+            }
+
+            ul {
+                font-size: 14px;
+
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        // 下面部分
+        .down {
+            padding-top: 16px;
+            padding-left: 18px;
+
+            li {
+                float: left;
+                width: 48px;
+                height: 72px;
+                margin-right: 20px;
+                text-align: center;
+            }
+        }
+
+    }
+}

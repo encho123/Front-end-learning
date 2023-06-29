@@ -1,0 +1,131 @@
+.container {
+  height: 30px;
+  width: 1190px;
+  margin: 0 auto;
+}
+.topbar {
+  height: 30px;
+  background-color: #FFECECEC;
+  font-size: 12px;
+  line-height: 30px;
+}
+.topbar .hello {
+  margin-right: 20px;
+}
+.topbar .login {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid black;
+}
+.topbar li {
+  float: left;
+}
+.topbar li a {
+  padding-right: 10px;
+  margin-left: 10px;
+  border-right: 1px solid black;
+}
+.topbar li:last-child a {
+  border-right: none;
+  padding-right: 0;
+}
+.head {
+  height: 120px;
+}
+.head .seach {
+  font-size: 0;
+}
+.head .seach .txt {
+  width: 510px;
+  height: 36px;
+  margin-top: 40px;
+  border: 1px solid #ccc;
+}
+.head .seach .btn {
+  width: 60px;
+  height: 36px;
+  margin-top: 40px;
+  background-color: #ff6700;
+  border: none;
+  color: #fff;
+  background-image: url('../images/serch_icon.png');
+  background-repeat: no-repeat;
+  background-position: 18px 6px;
+}
+.mani-nav {
+  height: 48px;
+  border-bottom: 1px solid red;
+}
+.mani-nav li {
+  float: left;
+  margin-right: 20px;
+  height: 48px;
+  line-height: 48px;
+  font-size: 14px;
+}
+.mani-nav li a {
+  color: black;
+}
+.mani-nav li:first-child {
+  background: red;
+  padding: 0 30px;
+}
+.mani-nav li:first-child a {
+  color: #fff;
+}
+.content {
+  margin-top: 10px;
+}
+.content .leftsider {
+  width: 146px;
+  height: 438px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ccc;
+}
+.content .leftsider ul li:hover {
+  background-color: red;
+}
+.content .leftsider ul a:hover {
+  color: #fff;
+}
+.content .middle {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.content .middle .img {
+  height: 458 px;
+}
+.content .rightsider {
+  width: 290px;
+  height: 438px;
+}
+.content .rightsider .up {
+  width: 288px;
+  height: 196px;
+  padding: 14px 0 0 14px;
+  border: 1px solid #ccc;
+}
+.content .rightsider .up .kkbc {
+  border-bottom: 1px solid #ccc;
+}
+.content .rightsider .up .kkbc .leftfix {
+  font-size: 16px;
+}
+.content .rightsider .up ul {
+  font-size: 14px;
+}
+.content .rightsider .up ul li {
+  margin-bottom: 10px;
+}
+.content .rightsider .down {
+  padding-top: 16px;
+  padding-left: 18px;
+}
+.content .rightsider .down li {
+  float: left;
+  width: 48px;
+  height: 72px;
+  margin-right: 20px;
+  text-align: center;
+}

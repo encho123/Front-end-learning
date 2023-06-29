@@ -1,0 +1,31 @@
+.container {
+  height: 30px;
+  width: 1190px;
+  margin: 0 auto;
+}
+.topbar {
+  height: 30px;
+  background-color: #FFECECEC;
+  font-size: 12px;
+  line-height: 30px;
+}
+.topbar .hello {
+  margin-right: 20px;
+}
+.topbar .login {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid black;
+}
+.topbar li {
+  float: left;
+}
+.topbar li a {
+  padding-right: 10px;
+  margin-left: 10px;
+  border-right: 1px solid black;
+}
+.topbar li:last-child a {
+  border-right: none;
+  padding-right: 0;
+}

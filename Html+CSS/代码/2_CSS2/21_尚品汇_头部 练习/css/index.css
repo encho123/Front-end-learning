@@ -1,0 +1,54 @@
+.container {
+  height: 30px;
+  width: 1190px;
+  margin: 0 auto;
+}
+.topbar {
+  height: 30px;
+  background-color: #FFECECEC;
+  font-size: 12px;
+  line-height: 30px;
+}
+.topbar .hello {
+  margin-right: 20px;
+}
+.topbar .login {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid black;
+}
+.topbar li {
+  float: left;
+}
+.topbar li a {
+  padding-right: 10px;
+  margin-left: 10px;
+  border-right: 1px solid black;
+}
+.topbar li:last-child a {
+  border-right: none;
+  padding-right: 0;
+}
+.head {
+  height: 120px;
+}
+.head .seach {
+  font-size: 0;
+}
+.head .seach .txt {
+  width: 510px;
+  height: 36px;
+  margin-top: 40px;
+  border: 1px solid #ccc;
+}
+.head .seach .btn {
+  width: 60px;
+  height: 36px;
+  margin-top: 40px;
+  background-color: #ff6700;
+  border: none;
+  color: #fff;
+  background-image: url('../images/serch_icon.png');
+  background-repeat: no-repeat;
+  background-position: 18px 6px;
+}

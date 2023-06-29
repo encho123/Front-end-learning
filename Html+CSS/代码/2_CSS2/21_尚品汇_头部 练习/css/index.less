@@ -1,0 +1,71 @@
+@topclor: #FFECECEC;
+
+// 通用的样式
+.container {
+    height: 30px;
+    width: 1190px;
+    margin: 0 auto;
+}
+
+// 顶部导航栏
+.topbar {
+    height: 30px;
+    background-color: @topclor;
+    font-size: 12px;
+    line-height: 30px;
+
+    .hello {
+        margin-right: 20px;
+    }
+
+    .login {
+        margin-right: 10px;
+        padding-right: 10px;
+        border-right: 1px solid black;
+    }
+
+    li {
+        float: left;
+
+        a {
+            padding-right: 10px;
+            margin-left: 10px;
+            border-right: 1px solid black;
+        }
+
+        &:last-child a {
+            border-right: none;
+            padding-right: 0;
+        }
+    }
+
+}
+
+// 头部区域
+.head {
+    height: 120px;
+    // background-color: dimgrey;
+
+    .seach {
+        font-size: 0;
+
+        .txt {
+            width: 510px;
+            height: 36px;
+            margin-top: 40px;
+            border: 1px solid #ccc;
+        }
+
+        .btn {
+            width: 60px;
+            height: 36px;
+            margin-top: 40px;
+            background-color: #ff6700;
+            border: none;
+            color: #fff;
+            background-image: url('../images/serch_icon.png');
+            background-repeat: no-repeat;
+            background-position: 18px 6px;
+        }
+    }
+}
