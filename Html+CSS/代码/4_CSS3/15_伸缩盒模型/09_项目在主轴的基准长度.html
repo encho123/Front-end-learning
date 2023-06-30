@@ -26,22 +26,29 @@
 
 
         }
+
         .inner {
             width: 200px;
             height: 200px;
             background-color: skyblue;
             border: 1px solid black;
             box-sizing: border-box;
+            flex-grow: 1;
         }
+
         .inner2 {
             /* 设置伸缩项目在主轴上的基准长度，若主轴是横向的宽失效，若主轴是纵向的高失效 */
             flex-basis: 300px;
+        }
+
+        .inner1 {
+            flex-basis: 150px;
         }
     </style>
 </head>
 <body>
     <div class="outer">
-        <div class="inner">1</div>
+        <div class="inner inner1">1</div>
         <div class="inner inner2">2</div>
         <div class="inner">3</div>
     </div>
