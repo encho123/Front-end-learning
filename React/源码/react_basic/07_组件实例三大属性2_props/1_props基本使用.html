@@ -9,7 +9,7 @@
 	<div id="test1"></div>
 	<div id="test2"></div>
 	<div id="test3"></div>
-	
+
 	<!-- 引入react核心库 -->
 	<script type="text/javascript" src="../js/react.development.js"></script>
 	<!-- 引入react-dom，用于支持react操作DOM -->
@@ -19,27 +19,28 @@
 
 	<script type="text/babel">
 		//创建组件
-		class Person extends React.Component{
-			render(){
+		class Person extends React.Component {
+			render() {
 				// console.log(this);
-				const {name,age,sex} = this.props
+				// this props里面接受了所有传输的参数，是一个对象
+				const { name, age, sex } = this.props
 				return (
 					<ul>
 						<li>姓名：{name}</li>
 						<li>性别：{sex}</li>
-						<li>年龄：{age+1}</li>
+						<li>年龄：{age + 1}</li>
 					</ul>
 				)
 			}
 		}
 		//渲染组件到页面
-		ReactDOM.render(<Person name="jerry" age={19}  sex="男"/>,document.getElementById('test1'))
-		ReactDOM.render(<Person name="tom" age={18} sex="女"/>,document.getElementById('test2'))
+		ReactDOM.render(<Person name="jerry" age={19} sex="男" />, document.getElementById('test1'))
+		ReactDOM.render(<Person name="tom" age={18} sex="女" />, document.getElementById('test2'))
 
-		const p = {name:'老刘',age:18,sex:'女'}
+		const p = { name: '老刘', age: 18, sex: '女' }
 		// console.log('@',...p);
 		// ReactDOM.render(<Person name={p.name} age={p.age} sex={p.sex}/>,document.getElementById('test3'))
-		ReactDOM.render(<Person {...p}/>,document.getElementById('test3'))
+		ReactDOM.render(<Person {...p} />, document.getElementById('test3'))
 	</script>
 </body>
 </html>
