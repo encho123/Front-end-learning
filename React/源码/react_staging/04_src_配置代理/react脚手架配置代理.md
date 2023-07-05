@@ -14,7 +14,7 @@
 
 1. 优点：配置简单，前端请求资源时可以不加任何前缀。
 2. 缺点：不能配置多个代理。
-3. 工作方式：上述方式配置代理，当请求了3000不存在的资源时，那么该请求会转发给5000 （优先匹配前端资源）
+3. 工作方式：上述方式配置代理，当请求了3000不存在的资源时，那么该请求会转发给5000 （优先匹配前端资源）.有资源就不会使用代理服务器。
 
 
 
@@ -29,7 +29,8 @@
 2. 编写setupProxy.js配置具体代理规则：
 
    ```js
-   const proxy = require('http-proxy-middleware')
+   const proxy = require('http-proxy-middleware'
+   )
    
    module.exports = function(app) {
      app.use(

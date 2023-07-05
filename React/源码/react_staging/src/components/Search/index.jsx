@@ -4,7 +4,7 @@ import axios from 'axios'
 export default class Search extends Component {
 
 	search = ()=>{
-		//获取用户的输入(连续解构赋值+重命名) value重命名为keyWord
+		//获取用户的输入(连续解构赋值+重命名)
 		const {keyWordElement:{value:keyWord}} = this
 		//发送请求前通知App更新状态
 		this.props.updateAppState({isFirst:false,isLoading:true})
@@ -19,7 +19,6 @@ export default class Search extends Component {
 				this.props.updateAppState({isLoading:false,err:error.message})
 			}
 		)
-		
 	}
 
 	render() {
