@@ -38,6 +38,9 @@ export default class Search extends Component {
 		) */
 
 		//发送网络请求---使用fetch发送（优化）
+		// qcsy 这个和axios的差异，fetch是关注和数据分离，axios是关注和数据合并，所以axios的写法更简洁
+		//fetch返回的是一个promise对象，所以可以使用async和await，第一步是确定连接是否成功，第二步是确定数据是否成功
+		//有一定的兼容性
 		try {
 			const response= await fetch(`/api1/search/users2?q=${keyWord}`)
 			const data = await response.json()

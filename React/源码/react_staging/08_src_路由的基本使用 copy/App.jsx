@@ -1,14 +1,15 @@
-import React, { Component } from 'react'
-import {Link,Route} from 'react-router-dom'
-import Home from './components/Home'
-import About from './components/About'
+// 引入路由组件	
+import { Route, Link } from 'react-router-dom'
+// 引入react组件
+import { Component } from 'react'
+// 引入Home组件
+import Home from './pages/Home' // 引入Home组件
+// 引入About组件
+import About from './pages/About' // 引入About组件
 
-export default class App extends Component {
-	// 路由的实现，就是根据不同的路径，返回不同的组件
-	// 基于history模式的路由，不会刷新页面，但是需要后台的支持，如果后台没有对应的页面，就会出现404
-	// 基于hash模式的路由，不会刷新页面，但是会有#号，不需要后台的支持
-	render() {
-		return (
+export default class App extends Component{
+	render(){
+		return(
 			<div>
 				<div className="row">
 					{/* 导航栏 */}
@@ -28,6 +29,7 @@ export default class App extends Component {
 							{/* 在React中靠路由链接实现切换组件--编写路由链接 */}
 							<Link className="list-group-item" to="/about">About</Link>
 							<Link className="list-group-item" to="/home">Home</Link>
+						
 						</div>
 					</div>
 					<div className="col-xs-6">
@@ -37,6 +39,7 @@ export default class App extends Component {
 								{/* 注册路由 */}
 								<Route path="/about" component={About}/>
 								<Route path="/home" component={Home}/>
+								<Route path="/ReactRouter" component={Home}></Route>
 							</div>
 						</div>
 					</div>

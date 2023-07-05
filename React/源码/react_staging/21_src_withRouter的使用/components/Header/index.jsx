@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
+// 解决不是路由组件的问题，使用withRouter。
+// withRouter可以加工一般组件，让一般组件具备路由组件所特有的API
 
 class Header extends Component {
 

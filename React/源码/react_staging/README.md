@@ -69,6 +69,7 @@
 ## 六、Switch的使用
 				1.通常情况下，path和component是一一对应的关系。
 				2.Switch可以提高路由匹配效率(单一匹配)。
+				3.Switch包裹一下，里面的路由匹配到了，就不继续后面的匹配
 
 ## 七、解决多级路径刷新页面样式丢失的问题
 				1.public/index.html 中 引入样式时不写 ./ 写 / （常用）
@@ -94,7 +95,7 @@
 				2.路由的匹配是按照注册路由的顺序进行的
 
 ## 十一、向路由组件传递参数
-				1.params参数
+				1.params参数，
 							路由链接(携带参数)：<Link to='/demo/test/tom/18'}>详情</Link>
 							注册路由(声明接收)：<Route path="/demo/test/:name/:age" component={Test}/>
 							接收参数：this.props.match.params
@@ -107,7 +108,7 @@
 							路由链接(携带参数)：<Link to={{pathname:'/demo/test',state:{name:'tom',age:18}}}>详情</Link>
 							注册路由(无需声明，正常注册即可)：<Route path="/demo/test" component={Test}/>
 							接收参数：this.props.location.state
-							备注：刷新也可以保留住参数
+							备注：刷新也可以保留住参数，地址栏里面没有显示，前面的2个方式，都会有显示。
 				
 
 

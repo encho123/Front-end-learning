@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// 上面的写法说明，react里面既有默认导出，又有分别导出 qcsy
 import {NavLink,Route} from 'react-router-dom'
 import Home from './pages/Home' //Home是路由组件
 import About from './pages/About' //About是路由组件
@@ -21,7 +22,8 @@ export default class App extends Component {
 							{/* <a className="list-group-item" href="./about.html">About</a>
 							<a className="list-group-item active" href="./home.html">Home</a> */}
 
-							{/* 在React中靠路由链接实现切换组件--编写路由链接 */}
+							{/* 在React中靠路由链接实现切换组件--编写路由链接 
+							NavLink和Link的区别是什么qcsy*/}
 							<NavLink activeClassName="atguigu" className="list-group-item" to="/about">About</NavLink>
 							<NavLink activeClassName="atguigu" className="list-group-item" to="/home">Home</NavLink>
 						</div>
